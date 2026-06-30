@@ -107,10 +107,13 @@ def api_homepage():
     _home_cache = result
     return jsonify(result)
 
-@app.route("/api/search", methods=["POST"])
+@app.route("/api/search", methods=["GET", "POST"])
 def search():
-    data = request.get_json()
-    title = data.get("title", "").strip()
+    if request.method == "POST":
+        data = request.get_json()
+        title = data.get("title", "").strip()
+    else:
+        title = request.args.get("title", "").strip()
     if not title:
         return jsonify({"found": 0, "message": "الرجاء إدخال اسم الأنمي"})
 

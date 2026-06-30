@@ -276,10 +276,12 @@ class Anime:
         if result:
             return result
 
-        for srv_name, srv_enc in video_data.get("servers", {}).items():
-            result = try_server(srv_enc)
-            if result:
-                return result
+        servers = video_data.get("servers") or {}
+        if isinstance(servers, dict):
+            for srv_name, srv_enc in servers.items():
+                result = try_server(srv_enc)
+                if result:
+                    return result
 
         self.message = "No working video source found"
         return None
@@ -356,7 +358,11 @@ class Anime:
             return None
 
         servers_list = [("auto", video_data.get("data", ""))]
-        servers_list.extend(video_data.get("servers", {}).items())
+        srv = video_data.get("servers") or {}
+        if isinstance(srv, dict):
+            servers_list.extend(srv.items())
+        elif isinstance(srv, list):
+            servers_list.extend([(s.get("name", str(i)), s.get("url", "")) for i, s in enumerate(srv)])
 
         results = []
         seen = set()
