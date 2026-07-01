@@ -13,10 +13,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#000;--bg2:#0a0a0f;--bg3:#111118;--card-bg:#0d0d14;--card-border:rgba(255,255,255,0.06);--card-hover-border:rgba(255,255,255,0.12);--prim:#7c3aed;--prim2:#a78bfa;--acc:#6366f1;--green:#2fc867;--green-bg:rgba(47,200,103,0.12);--gold:#fbbf24;--text:#f0f0f5;--text2:#a0a0b8;--text3:#6a6a82;--radius:12px;--radius-sm:8px;--nav-h:64px;--ease:cubic-bezier(0.22,1,0.36,1);--swiper-navigation-color:#fff}
+:root{--bg:#000;--bg2:#0a0a0f;--bg3:#111118;--card-bg:#0d0d14;--card-border:rgba(255,255,255,0.06);--card-hover-border:rgba(255,255,255,0.12);--prim:#eab308;--prim2:#facc15;--acc:#d97706;--green:#2fc867;--green-bg:rgba(47,200,103,0.12);--gold:#fbbf24;--text:#f0f0f5;--text2:#a0a0b8;--text3:#6a6a82;--radius:12px;--radius-sm:8px;--nav-h:64px;--ease:cubic-bezier(0.22,1,0.36,1);--swiper-navigation-color:#fff}
 html{scroll-behavior:smooth}
-body{font-family:'Bricolage Grotesque','Noto Sans Arabic',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
-::selection{background:rgba(124,58,237,0.3);color:#fff}
+body{font-family:'Noto Sans Arabic','Bricolage Grotesque',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:#fff;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6;font-size:16px}
+::selection{background:rgba(234,179,8,0.3);color:#fff}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:20px}
@@ -38,7 +38,7 @@ header.scrolled{background:rgba(0,0,0,0.95)}
 .nav-links{display:none;align-items:center;gap:4px;margin:0 8px}
 .nav-links a{padding:6px 14px;font-size:.82em;font-weight:500;color:var(--text2);border-radius:8px;transition:all .2s;white-space:nowrap}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,0.05)}
-.nav-links a.active{color:#fff;background:rgba(124,58,237,0.15)}
+.nav-links a.active{color:#fff;background:rgba(234,179,8,0.15)}
 .header-actions{display:flex;align-items:center;gap:8px;margin-right:auto}
 .search-wrap{display:none;position:relative;flex:1;max-width:480px}
 .search-wrap.show{display:block}
@@ -77,7 +77,7 @@ header.scrolled{background:rgba(0,0,0,0.95)}
 @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .mm-item{display:block;width:100%;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);color:var(--text2);padding:14px 20px;border-radius:12px;font-size:.9em;font-weight:600;cursor:pointer;transition:all .25s;text-align:right}
 .mm-item:hover{background:rgba(255,255,255,0.05);color:#fff}
-.mm-item.active{background:rgba(124,58,237,0.12);color:var(--prim2);border-color:rgba(124,58,237,0.15)}
+.mm-item.active{background:rgba(234,179,8,0.12);color:var(--prim2);border-color:rgba(234,179,8,0.15)}
 .mm-divider{height:1px;background:rgba(255,255,255,0.05);margin:8px 0}
 
 /* ── Main Content ── */
@@ -88,19 +88,19 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 
 /* ── Hero ── */
 .hero{position:relative;height:55vh;min-height:360px;max-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
-.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(124,58,237,0.15),transparent),radial-gradient(ellipse 60% 40% at 80% 20%,rgba(99,102,241,0.08),transparent),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(168,85,247,0.06),transparent);animation:heroPulse 8s ease-in-out infinite}
+.hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(234,179,8,0.15),transparent),radial-gradient(ellipse 60% 40% at 80% 20%,rgba(217,119,6,0.08),transparent),radial-gradient(ellipse 50% 50% at 20% 80%,rgba(250,204,21,0.06),transparent);animation:heroPulse 8s ease-in-out infinite}
 @keyframes heroPulse{0%,100%{opacity:.7}50%{opacity:1}}
 .hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 60% 50% at 50% 50%,black,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 60% 50% at 50% 50%,black,transparent 70%)}
 .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);z-index:0;animation:orbFloat 12s ease-in-out infinite}
-.hero-orb:nth-child(2){width:500px;height:500px;background:rgba(124,58,237,0.12);top:-10%;left:10%;animation-delay:-4s}
-.hero-orb:nth-child(3){width:400px;height:400px;background:rgba(99,102,241,0.08);bottom:-15%;right:5%;animation-delay:-8s}
-.hero-orb:nth-child(4){width:350px;height:350px;background:rgba(168,85,247,0.06);top:40%;left:60%;animation-delay:-2s}
+.hero-orb:nth-child(2){width:500px;height:500px;background:rgba(234,179,8,0.12);top:-10%;left:10%;animation-delay:-4s}
+.hero-orb:nth-child(3){width:400px;height:400px;background:rgba(217,119,6,0.08);bottom:-15%;right:5%;animation-delay:-8s}
+.hero-orb:nth-child(4){width:350px;height:350px;background:rgba(250,204,21,0.06);top:40%;left:60%;animation-delay:-2s}
 @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.95)}}
 .hero-gradient{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,0.6) 80%,#000)}
 .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 20px 28px;max-width:1400px;margin:0 auto;width:100%}
 .hero-brand{display:flex;flex-direction:column;align-items:center;gap:4px;margin-bottom:12px;animation:heroFadeIn 1s ease both}
-.hero-brand-icon{font-size:4em;line-height:1;background:linear-gradient(135deg,var(--prim2),var(--prim),var(--acc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 40px rgba(124,58,237,0.3));animation:heroIconPulse 3s ease-in-out infinite}
-@keyframes heroIconPulse{0%,100%{filter:drop-shadow(0 0 40px rgba(124,58,237,0.3))}50%{filter:drop-shadow(0 0 60px rgba(124,58,237,0.5))}}
+.hero-brand-icon{font-size:4em;line-height:1;background:linear-gradient(135deg,var(--prim2),var(--prim),var(--acc));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 40px rgba(234,179,8,0.3));animation:heroIconPulse 3s ease-in-out infinite}
+@keyframes heroIconPulse{0%,100%{filter:drop-shadow(0 0 40px rgba(234,179,8,0.3))}50%{filter:drop-shadow(0 0 60px rgba(234,179,8,0.5))}}
 .hero-brand-text{font-size:3.2em;font-weight:900;letter-spacing:-2px;background:linear-gradient(135deg,#fff 30%,var(--prim2) 70%,var(--prim));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
 .hero-brand-sub{font-size:.95em;color:var(--text2);font-weight:400;margin-top:4px;letter-spacing:2px}
 .hero-tags{display:none}
@@ -111,11 +111,11 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 
 .hero-search-wrap{width:100%;max-width:480px;margin-top:16px;animation:heroFadeIn 1s ease .4s both}
 .hero-search-inner{display:flex;align-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:100px;overflow:hidden;transition:all .3s}
-.hero-search-inner:focus-within{border-color:var(--prim2);background:rgba(255,255,255,0.08);box-shadow:0 0 30px rgba(124,58,237,0.1)}
+.hero-search-inner:focus-within{border-color:var(--prim2);background:rgba(255,255,255,0.08);box-shadow:0 0 30px rgba(234,179,8,0.1)}
 .hero-search-inner input{flex:1;background:transparent;border:none;padding:14px 20px;font-size:1em;color:#fff;min-width:0}
 .hero-search-inner input::placeholder{color:var(--text3)}
-.hero-search-inner button{background:linear-gradient(135deg,var(--prim),#6d28d9);border:none;padding:10px 20px;color:#fff;font-size:.9em;font-weight:600;border-radius:100px;margin:4px;cursor:pointer;transition:all .2s}
-.hero-search-inner button:hover{box-shadow:0 4px 20px rgba(124,58,237,0.3)}
+.hero-search-inner button{background:linear-gradient(135deg,var(--prim),#b45309);border:none;padding:10px 20px;color:#fff;font-size:.9em;font-weight:600;border-radius:100px;margin:4px;cursor:pointer;transition:all .2s}
+.hero-search-inner button:hover{box-shadow:0 4px 20px rgba(234,179,8,0.3)}
 .hero-quote{font-size:.85em;color:var(--text2);font-weight:400;font-style:italic;margin-top:12px;opacity:.7;animation:heroFadeIn 1s ease .5s both;max-width:480px;text-align:center;line-height:1.6}
 
 /* ── Sections ── */
@@ -155,7 +155,7 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 .browse-select option{background:#111}
 .browse-input{flex:1;min-width:120px;max-width:240px}
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 18px;background:var(--prim);color:#fff;border:none;border-radius:8px;font-size:.82em;font-weight:600;transition:all .2s}
-.btn:hover{background:#6d28d9}
+.btn:hover{background:#b45309}
 .btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;background:transparent;color:var(--text2);border:1px solid rgba(255,255,255,0.1);border-radius:8px;font-size:.82em;font-weight:500;transition:all .2s}
 .btn-outline:hover{color:#fff;border-color:rgba(255,255,255,0.2);background:rgba(255,255,255,0.04)}
 .btn-sm{padding:6px 14px;font-size:.78em}
@@ -166,7 +166,7 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 .filter-group select{min-width:100px}
 .pagination{display:flex;justify-content:center;align-items:center;gap:12px;margin:24px 0}
 .page-btn{padding:8px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:#fff;font-size:.82em;transition:all .2s}
-.page-btn:hover{background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.2)}
+.page-btn:hover{background:rgba(234,179,8,0.15);border-color:rgba(234,179,8,0.2)}
 .page-current{color:var(--text2);font-size:.88em;font-weight:600}
 
 /* ── Episode View ── */
@@ -185,8 +185,8 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 .eps-actions input{width:70px;padding:8px 10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:8px;color:#fff;font-size:.82em;text-align:center}
 .eps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
 .ep-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);border-radius:8px;cursor:pointer;transition:all .2s}
-.ep-item:hover{background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.15)}
-.ep-num{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(124,58,237,0.1);color:var(--prim2);font-size:.78em;font-weight:700}
+.ep-item:hover{background:rgba(234,179,8,0.08);border-color:rgba(234,179,8,0.15)}
+.ep-num{flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;background:rgba(234,179,8,0.1);color:var(--prim2);font-size:.78em;font-weight:700}
 .ep-name{flex:1;font-size:.82em;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ep-arrow{color:var(--text3);font-size:.7em}
 
@@ -201,7 +201,7 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 .player-close:hover{color:#fff}
 .player-wrap{position:relative;aspect-ratio:16/9;background:#000}
 .player-wrap video,.player-wrap iframe{width:100%;height:100%;display:block}
-.player-wrap .hidden{display:none}
+.player-wrap .hidden{display:none}.hidden{display:none!important}
 .player-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:rgba(0,0,0,0.85);z-index:5;transition:opacity .3s}
 .player-loading.hidden{display:none}
 .player-loading p{font-size:.85em;color:var(--text2)}
@@ -212,7 +212,7 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 .progress-wrap{flex:1;min-width:80px}
 .progress-wrap input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:4px;background:rgba(255,255,255,0.08);border-radius:4px;outline:none;background-image:linear-gradient(to right,var(--prim2) 0%,var(--prim2) 0%,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0.08) 100%)}
 .progress-wrap input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px}
-.progress-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--prim2);border:2px solid var(--prim2);cursor:pointer;margin-top:-5px;box-shadow:0 0 12px rgba(167,139,250,0.3)}
+.progress-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--prim2);border:2px solid var(--prim2);cursor:pointer;margin-top:-5px;box-shadow:0 0 12px rgba(250,204,21,0.3)}
 .progress-wrap input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:rgba(255,255,255,0.08)}
 .progress-wrap input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--prim2);border:2px solid var(--prim2);cursor:pointer}
 .time-display{font-size:.75em;color:var(--text3);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -227,9 +227,9 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
 .toast.show{display:block;transform:translateX(-50%) translateY(0)}
 .toast.err{border-color:rgba(239,68,68,0.2)}
 
-.scroll-top{position:fixed;bottom:24px;right:24px;z-index:50;width:40px;height:40px;border-radius:50%;background:rgba(124,58,237,0.15);border:1px solid rgba(124,58,237,0.2);color:var(--prim2);font-size:1.2em;display:none;align-items:center;justify-content:center;transition:all .3s}
+.scroll-top{position:fixed;bottom:24px;right:24px;z-index:50;width:40px;height:40px;border-radius:50%;background:rgba(234,179,8,0.15);border:1px solid rgba(234,179,8,0.2);color:var(--prim2);font-size:1.2em;display:none;align-items:center;justify-content:center;transition:all .3s}
 .scroll-top.show{display:flex}
-.scroll-top:hover{background:rgba(124,58,237,0.25)}
+.scroll-top:hover{background:rgba(234,179,8,0.25)}
 
 .empty-state{text-align:center;padding:60px 20px;color:var(--text3)}
 .empty-state p{font-size:.95em;margin-bottom:4px}
@@ -319,7 +319,6 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
       <div class="nav-links" id="navLinks">
         <a href="#" class="active" data-view="home">الرئيسية</a>
         <a href="#" data-view="browse">المكتبة</a>
-        <a href="#" data-view="schedule">الجدول</a>
       </div>
 
       <div class="search-wrap" id="searchWrap">
@@ -334,9 +333,6 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
         <button class="header-btn search-mobile-btn" id="searchMobileBtn" aria-label="بحث">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
-        <button class="avatar-btn" id="avatarBtn" aria-label="حساب">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:4px auto;display:block"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
       </div>
     </div>
   </header>
@@ -345,7 +341,6 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
   <div class="mobile-menu" id="mobileMenu">
     <button class="mm-item active" data-view="home">🏠 الرئيسية</button>
     <button class="mm-item" data-view="browse">📚 المكتبة</button>
-    <button class="mm-item" data-view="schedule">📅 الجدول</button>
     <div class="mm-divider"></div>
     <button class="mm-item" data-view="search">🔍 بحث</button>
   </div>
@@ -416,16 +411,6 @@ main{margin-top:var(--nav-h);flex:1;min-height:calc(100vh - var(--nav-h))}
       </div>
       <div class="card-grid" id="browseGrid" style="padding:0 16px;max-width:1400px;margin:0 auto"></div>
       <div class="pagination" id="browsePages"></div>
-    </div>
-
-    <!-- Schedule View -->
-    <div class="view" id="scheduleView">
-      <div class="section-header" style="padding:16px;max-width:1400px;margin:0 auto">
-        <h2>📅 جدول الإصدارات</h2>
-      </div>
-      <div id="scheduleContent" style="padding:0 16px;max-width:1400px;margin:0 auto">
-        <div class="empty-state"><p>قريباً</p><small>جدول الإصدارات قيد التطوير</small></div>
-      </div>
     </div>
 
     <!-- Search View -->
@@ -522,13 +507,11 @@ const searchInput = $('searchInput');
 const searchBtn = $('searchBtn');
 const searchDropdown = $('searchDropdown');
 const searchMobileBtn = $('searchMobileBtn');
-const avatarBtn = $('avatarBtn');
 const navLinks = $('navLinks');
 const logoLink = $('logoLink');
 
 const homeView = $('homeView');
 const browseView = $('browseView');
-const scheduleView = $('scheduleView');
 const searchView = $('searchView');
 const episodeView = $('episodeView');
 
@@ -588,61 +571,224 @@ const backBtn = $('backBtn');
 // ── Utils ──
 const CORS_PROXIES = ['https://corsproxy.io/?url=', 'https://api.allorigins.win/raw?url='];
 const API_BASE = 'https://animeslayer.to';
+const FALLBACK_ANIME = [
+  {title:"ون بيس",slug:"one-piece-byw",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-bd6aea763d77a3a6a341a60425f32e5b.jpg",type:"TV",year:"1999",rating:""},
+  {title:"هجوم العمالقة",slug:"shingeki-no-kyojin-bzw",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-860185f873a5e284e0c3ba0a4c102f12.jpg",type:"TV",year:"2013",rating:""},
+  {title:"جوجوتسو كايسن",slug:"jujutsu-kaisen-cly",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-656701bb048b4df90fbc9d874787014d.jpg",type:"TV",year:"2020",rating:""},
+  {title:"كود جياس",slug:"code-geass-hangyaku-no-lelouch-nn",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-b45ba7f1ea5a330750da48e35d9a884b.jpg",type:"TV",year:"2006",rating:""},
+  {title:"المسجل الأسود",slug:"the-black-record-fqn",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-7323094cb72aa748f2418a8e273f1b69.jpg",type:"TV",year:"2025",rating:""},
+  {title:"دارلينغ إن ذا فرانكس",slug:"darling-in-the-franxx-sl",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-a4b8e29d5eb77c8532202a58a38c3f4c.jpg",type:"TV",year:"2018",rating:""},
+  {title:"ناروتو شيبودن",slug:"naruto-shippuden-uv",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-d6fc57a680a9fb7277ff2c9a7dead6d1.jpg",type:"TV",year:"2007",rating:""},
+  {title:"قاتل الشياطين",slug:"kimetsu-no-yaiba-cn",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-628d1ca5095917f2f21c5caf3d37655a.jpg",type:"TV",year:"2021",rating:""},
+  {title:"ون بانش مان",slug:"one-punch-man-bzz",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-e3c7def532f8b3ea38e49616a8b588dc.jpg",type:"TV",year:"2015",rating:""},
+  {title:"بليتش",slug:"bleach-sennen-kessen-hen-cuq",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-5e3a0cb2af11c1abdb6ae2e34852ca19.jpg",type:"TV",year:"2022",rating:""},
+  {title:"هانتر × هانتر",slug:"hunter-x-hunter-2011-agk",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-baac3c17c15e329e85b2019ab7e9f9af.jpg",type:"TV",year:"2011",rating:""},
+  {title:"دراغون بول سوبر",slug:"dragon-ball-super-bzj",image:"https://img.anslayer.com/anime/anime/cover-image/anime-cover-d07a97303a04e13e9a0c3fc096608cfa.jpg",type:"TV",year:"2015",rating:""}
+];
 
-function isFlaskAvailable() { return location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.port === '5000'; }
+// ── XOR Decryption (ported from AnimeSlayerAPI.py) ──
+const DECRYPT_KEY = "AQWXZSCED@@POIUYTRR159";
+const TITLE_XOR_KEY = "asxwqa147";
 
-async function apiFetch(path) {
-  if (isFlaskAvailable()) {
-    try {
-      const r = await fetch(path);
-      if (r.ok) return r.json();
-    } catch(e) {}
-  }
-  // Fallback: direct via CORS proxy
-  let url;
-  const qp = new URLSearchParams(path.split('?')[1] || '');
-  if (path.startsWith('/api/search')) {
-    url = API_BASE + '/api/search.php?q=' + encodeURIComponent(qp.get('title') || '');
-  } else if (path.startsWith('/api/browse')) {
-    const p = {_api: 1, order_by: qp.get('order_by') || 'latest_first', page: qp.get('page') || '1'};
-    ['keyword','season','type','status','year'].forEach(k => { const v = qp.get(k); if (v) p[k] = v; });
-    url = API_BASE + '/browse?' + new URLSearchParams(p);
-  }
-  else if (path.startsWith('/api/homepage')) url = API_BASE + '/browse?_api=1&order_by=latest_first&page=1';
-  else throw new Error('Unsupported path: ' + path);
+function xorDecrypt(b64Data, key) {
+  try {
+    const raw = atob(b64Data);
+    const bytes = new Uint8Array(raw.length);
+    for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+    return new TextDecoder().decode(bytes);
+  } catch(e) { return ''; }
+}
+
+// ── CORS proxy fetch ──
+async function proxyFetch(url, timeoutMs = 12000) {
   const errors = [];
   for (const proxy of CORS_PROXIES) {
     try {
-      const r = await fetch(proxy + encodeURIComponent(url));
-      if (!r.ok) continue;
-      const data = await r.json();
-      if (path.startsWith('/api/homepage')) {
-        if (Array.isArray(data)) return data;
-        if (data.success) return [
-          {label: '🆕 أحدث الأنمي', items: (data.data || []).slice(0, 18).map(formatBrowseItem)},
-          {label: '📺 يعرض الآن', items: (data.data || []).filter(x => x.anime_status === 'Currently Airing').slice(0, 18).map(formatBrowseItem)}
-        ];
-      }
-      if (path.startsWith('/api/browse')) return data;
-      if (path.startsWith('/api/search')) return {found: data.length ? 1 : 0, results: data.map(s => ({title: s.title, slug: s.href?.replace('/title/', '') || '', image: s.image || '', type: s.type || '', year: s.year || '', rating: s.rating || ''}))};
-      return data;
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), timeoutMs);
+      const r = await fetch(proxy + encodeURIComponent(url), {signal: controller.signal});
+      clearTimeout(timer);
+      if (r.ok) return r;
     } catch(e) { errors.push(e.message); }
   }
-  throw new Error(errors.join('; '));
+  throw new Error('Proxy failed: ' + errors.join('; '));
 }
 
-function formatBrowseItem(item) {
-  const slug = (item.anime_name || '').toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-') + '-' + (item.anime_id ? String.fromCharCode(97 + (item.anime_id % 26)) : 'x');
+async function proxyFetchJSON(url, timeoutMs = 12000) {
+  const r = await proxyFetch(url, timeoutMs);
+  return r.json();
+}
+
+async function proxyFetchText(url, timeoutMs = 12000) {
+  const r = await proxyFetch(url, timeoutMs);
+  return r.text();
+}
+
+// ── API functions (no Flask needed) ──
+async function apiFetchHomepage() {
+  const url = API_BASE + '/browse?_api=1&order_by=latest_first&page=1';
+  const data = await proxyFetchJSON(url, 10000);
+  if (Array.isArray(data)) return data;
+  if (data && data.success && data.data) return [
+    {label:'🆕 أحدث الأنمي', items: (data.data||[]).slice(0,18).map(fmtItem)},
+    {label:'📺 يعرض الآن', items: (data.data||[]).filter(x=>x.anime_status==='Currently Airing').slice(0,18).map(fmtItem)}
+  ];
+  throw new Error('Invalid homepage data');
+}
+
+async function apiFetchBrowse(qs) {
+  const url = API_BASE + '/browse?' + qs;
+  const data = await proxyFetchJSON(url, 10000);
+  if (!data || !data.success) return {success:false, data:[], has_next:false, has_prev:false, total:0};
   return {
-    title: item.anime_name,
-    slug: slug,
-    image: item.anime_cover_image_url || '',
-    type: item.anime_type || '',
-    status: item.anime_status || '',
-    year: item.anime_release_year || '',
-    season: item.anime_season || '',
-    rating: item.anime_rating || '',
-    genres: item.anime_genres || ''
+    success: true,
+    data: (data.data||[]).map(fmtItem),
+    has_next: !!data.has_next, has_prev: !!data.has_prev,
+    total: data.total_min || data.total || (data.data||[]).length
+  };
+}
+
+async function apiFetchSearch(title) {
+  const url = API_BASE + '/api/search.php?q=' + encodeURIComponent(title);
+  const data = await proxyFetchJSON(url, 10000);
+  if (Array.isArray(data)) return {found:data.length?1:0, results: data.map(s=>({title:s.title, slug:(s.href||'').replace('/title/','')||s.slug||'', image:s.image||'', type:s.type||'', year:s.year||'', rating:s.rating||''}))};
+  return {found:0, results:[]};
+}
+
+function fmtItem(item) {
+  return {
+    title: item.anime_name || item.title || '',
+    slug: item.slug || (item.href||'').replace('/title/','') || '',
+    image: item.anime_cover_image_url || item.image || '',
+    type: item.anime_type || item.type || '',
+    status: item.anime_status || item.status || '',
+    year: item.anime_release_year || item.year || '',
+    season: item.anime_season || item.season || '',
+    rating: item.anime_rating || item.rating || '',
+    genres: item.anime_genres || item.genres || ''
+  };
+}
+
+// ── Episode fetching (full client-side) ──
+async function fetchEpisodes(slug) {
+  try {
+    const html = await proxyFetchText(API_BASE + '/e/' + slug, 15000);
+    return parseEpisodePage(html, slug);
+  } catch(e) {}
+  try {
+    const html = await proxyFetchText(API_BASE + '/title/' + slug, 15000);
+    return parseTitlePage(html, slug);
+  } catch(e) {}
+  throw new Error('تعذر تحميل الحلقات');
+}
+
+function parseEpisodePage(html, slug) {
+  const epMatch = html.match(/const\s+episodesData\s*=\s*(\[[\s\S]*?\])\s*;/);
+  if (!epMatch) throw new Error('لا توجد بيانات حلقات');
+  let epData;
+  try { epData = JSON.parse(epMatch[1]); } catch(e) { throw new Error('فشل تحليل بيانات الحلقات'); }
+  if (!epData || !epData.length) throw new Error('لا توجد حلقات');
+  const nameMatch = html.match(/const\s+name\s*=\s*['"]([^'"]*)['"]/);
+  const sanMatch = html.match(/const\s+san\s*=\s*['"]([^'"]*)['"]/);
+  const mwsemMatch = html.match(/const\s+mwsem\s*=\s*['"]([^'"]*)['"]/);
+  const apiName = nameMatch ? nameMatch[1] : 'Lh8SWGFRVFIl';
+  const apiSan = sanMatch ? sanMatch[1] : 'Lh8SWGFRVFIl';
+  const apiMwsem = mwsemMatch ? mwsemMatch[1] : btoa('OP,');
+  const titleMatch = html.match(/"name":\s*"([^"]+)"/);
+  const titleTagMatch = html.match(/<title>([^<]+)<\/title>/);
+  let animeName = '';
+  if (titleMatch) animeName = titleMatch[1];
+  else if (titleTagMatch) animeName = titleTagMatch[1].replace(/Anime Slayer|انمي سلاير|مشاهدة|أونلاين/gi, '').trim();
+  const eps = epData.map((e, i) => ({
+    n: e.id || e.n || e.number || (i + 1),
+    title: e.title || ('حلقة ' + (e.id || e.n || (i + 1))),
+    watchUrl: e.watchUrl || e.watch_url || e.url || ''
+  }));
+  return {
+    found: 1, episodes: eps.map(e => ({n: e.n, title: e.title})),
+    name: animeName, _fullData: eps,
+    _apiName: apiName, _apiSan: apiSan, _apiMwsem: apiMwsem, _slug: slug
+  };
+}
+
+function parseTitlePage(html, slug) {
+  const epMatch = html.match(/const\s+episodes\s*=\s*\[([\s\S]*?)\]\s*;/);
+  if (!epMatch) throw new Error('لا توجد بيانات حلقات (title)');
+  const rawEntries = epMatch[1];
+  const entries = rawEntries.match(/\{([^}]+)\}/g) || [];
+  if (!entries.length) throw new Error('لا توجد حلقات');
+  const eps = [];
+  for (const entry of entries) {
+    const nMatch = entry.match(/n:\s*(\d+)/);
+    const titleMatch = entry.match(/title:\s*"([^"]*)"/);
+    const hrefMatch = entry.match(/href:\s*"([^"]+)"/);
+    if (!nMatch || !hrefMatch) continue;
+    const epN = parseInt(nMatch[1]);
+    const epTitle = titleMatch ? titleMatch[1] : ('حلقة ' + epN);
+    let frag = '';
+    try { const decrypted = xorDecrypt(hrefMatch[1], TITLE_XOR_KEY); const hashIdx = decrypted.indexOf('#'); frag = hashIdx >= 0 ? decrypted.substring(hashIdx + 1) : ''; } catch(e) {}
+    eps.push({n: epN, title: epTitle, watchUrl: frag});
+  }
+  const nameMatch = html.match(/"name":\s*"([^"]+)"/);
+  return {
+    found: 1, episodes: eps.map(e => ({n: e.n, title: e.title})),
+    name: nameMatch ? nameMatch[1] : '',
+    _fullData: eps, _apiName: 'Lh8SWGFRVFIl', _apiSan: 'Lh8SWGFRVFIl', _apiMwsem: '', _slug: slug
+  };
+}
+
+// ── Video URL fetching (full client-side) ──
+async function fetchVideoUrls(slug, episodeN, epData) {
+  const epInfo = (epData._fullData || []).find(e => e.n === episodeN);
+  if (!epInfo) throw new Error('بيانات الحلقة غير موجودة');
+  const frag = epInfo.watchUrl || '';
+  const parts = slug.split('-');
+  const epCode = parts.length > 1 ? parts[parts.length - 1] : slug;
+  const name = epData._apiName || 'Lh8SWGFRVFIl';
+  const san = epData._apiSan || 'Lh8SWGFRVFIl';
+  const mwsem = epData._apiMwsem || btoa('OP,' + (epData.name || slug));
+  let first, sec;
+  try { const flare = await proxyFetchJSON('https://patrimoines-en-mouvement.org/lib/flare/v3.php', 10000); first = flare.first; sec = flare.sec; } catch(e) { throw new Error('فشل الاتصال بخادم Flare'); }
+  let authData;
+  try { authData = await proxyFetchJSON(first + '?pe=' + encodeURIComponent(epCode) + '&hash=' + encodeURIComponent(frag), 10000); } catch(e2) {}
+  if (!authData || !authData.a) {
+    try { const r = await proxyFetch(first, 10000); authData = JSON.parse(await r.text()); } catch(e3) { throw new Error('فشل التحقق من الرابط'); }
+  }
+  const params = new URLSearchParams({keyn: authData.d||authData.c||'', name: name, pe: authData.c||authData.pe||epCode, bool: 'no', id: authData.a||'', info: authData.b||'', san: san, mwsem: mwsem});
+  let videoData;
+  try {
+    const r = await proxyFetch(sec, 15000);
+    const text = await r.text();
+    let parsed;
+    try { parsed = JSON.parse(text); } catch(e) { const jMatch = text.match(/\{[\s\S]*\}/); if (jMatch) parsed = JSON.parse(jMatch[0]); else throw new Error('Invalid response'); }
+    videoData = parsed;
+  } catch(e4) { throw new Error('فشل تحميل روابط الفيديو'); }
+  if (!videoData || !videoData.data) throw new Error('لا توجد روابط فيديو');
+  const results = [];
+  const seen = new Set();
+  async function extractUrl(encryptedUrl) {
+    const phpUrl = xorDecrypt(encryptedUrl, DECRYPT_KEY);
+    if (!phpUrl) return null;
+    if (phpUrl.includes('mega.nz/embed')) return phpUrl;
+    try {
+      const r = await proxyFetch(phpUrl, 10000);
+      const text = await r.text();
+      const patterns = [/"src":\s*'([^']+\.mp4)'/, /"src":\s*'([^']+\.m3u8)'/, /src:\s*'([^']+\.mp4)'/, /src:\s*'([^']+\.m3u8)'/];
+      for (const p of patterns) { const m = text.match(p); if (m) { let url = m[1]; if (!url.startsWith('http')) url = new URL(url, phpUrl).href; return url; } }
+      const allSrc = [...text.matchAll(/src:\s*'([^']+)'/g)];
+      for (const m of allSrc) { const s = m[1]; if (s.includes('http') && !s.includes('.js') && !s.includes('.css') && !s.includes('bkvideo.online')) { if (s.endsWith('.mp4')||s.endsWith('.m3u8')||s.includes('/video/')||s.includes('/d/')||s.includes('mediafire')||s.includes('gamescdn')) return s; } }
+    } catch(e) {}
+    return null;
+  }
+  try { const mainUrl = await extractUrl(videoData.data); if (mainUrl && !seen.has(mainUrl)) { seen.add(mainUrl); results.push({server: 'auto', url: mainUrl}); } } catch(e) {}
+  let servers = videoData.servers || {};
+  if (typeof servers === 'object') {
+    if (Array.isArray(servers)) { for (const s of servers) { try { const url = await extractUrl(s.url||s.data||s); if (url && !seen.has(url)) { seen.add(url); results.push({server: s.name||s.server||('سيرفر '+(results.length+1)), url: url}); } } catch(e) {} } }
+    else { for (const [srvName, srvEnc] of Object.entries(servers)) { try { const url = await extractUrl(srvEnc); if (url && !seen.has(url)) { seen.add(url); results.push({server: srvName, url: url}); } } catch(e) {} } }
+  }
+  if (!results.length) throw new Error('لا توجد روابط فيديو صالحة');
+  return results;
+}
   };
 }
 function showToast(msg, type = 'err') {
@@ -658,11 +804,12 @@ function hideLoading() { loading.classList.remove('show'); }
 function showView(view, pushHistory = true) {
   $$('.view').forEach(v => v.classList.remove('active'));
   view.classList.add('active');
+  const viewName = view.id.replace('View', '');
   $$('[data-view]').forEach(el => {
-    el.classList.toggle('active', el.dataset.view === view.id.replace('View', ''));
+    el.classList.toggle('active', el.dataset.view === viewName);
   });
   if (pushHistory) {
-    viewHistory.push(view.id);
+    viewHistory.push(viewName);
     backBtn.style.display = viewHistory.length > 1 ? 'flex' : 'none';
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -719,14 +866,14 @@ const viewHistory = ['home'];
 backBtn.addEventListener('click', () => {
   viewHistory.pop();
   const prev = viewHistory.pop() || 'home';
-  switchView(prev);
+  switchView(prev, false);
   viewHistory.push(prev);
 });
 
 // ── Nav ──
-function switchView(viewId) {
-  const views = { home: homeView, browse: browseView, schedule: scheduleView, search: searchView };
-  if (views[viewId]) showView(views[viewId]);
+function switchView(viewId, pushHistory = true) {
+  const views = { home: homeView, browse: browseView, search: searchView };
+  if (views[viewId]) showView(views[viewId], pushHistory);
   mobileMenu.classList.remove('open');
   if (viewId === 'browse') loadBrowse(1);
   if (viewId === 'home') loadHome();
@@ -783,7 +930,7 @@ function doSearchDropdown(q) {
   const dd = searchDropdown;
   dd.innerHTML = '<div class="s-state"><div class="s-dots"><span></span><span></span><span></span></div></div>';
   dd.classList.add('open');
-  apiFetch('/api/search?title=' + encodeURIComponent(q))
+  apiFetchSearch(q)
     .then(d => {
       if (d.found && d.results.length) {
         dd.innerHTML = d.results.slice(0, 6).map(item => {
@@ -807,8 +954,7 @@ function doSearchDropdown(q) {
 function doSearchFull(q) {
   showLoading();
   showView(searchView);
-  const url = '/api/search?title=' + encodeURIComponent(q);
-  apiFetch(url)
+  apiFetchSearch(q)
     .then(d => {
       hideLoading();
       if (d.found && d.results.length) {
@@ -837,19 +983,14 @@ heroSearchInput.addEventListener('keydown', e => {
   }
 });
 
-// ── Avatar ──
-avatarBtn.addEventListener('click', () => {
-  showToast('قريباً', '');
-});
-
 // ── Home Sections ──
 function loadHome() {
   sections.innerHTML = skeleton(12);
-  apiFetch('/api/homepage')
+  apiFetchHomepage()
     .then(d => {
+      if (!Array.isArray(d) || !d.length) throw new Error('no data');
       sections.innerHTML = '';
-      const data = Array.isArray(d) ? d : [];
-      data.forEach((sec, si) => {
+      d.forEach((sec, si) => {
         const items = sec.items || [];
         if (!items.length) return;
         const el = document.createElement('div');
@@ -862,7 +1003,22 @@ function loadHome() {
       setTimeout(() => initSwipers(), 100);
     })
     .catch(() => {
-      sections.innerHTML = '<div class="empty-state"><p>تعذر تحميل المحتوى</p><small>تحقق من اتصال الخادم</small></div>';
+      // Fallback to hardcoded data when API fails
+      sections.innerHTML = '';
+      const fb = [
+        {label:'🆕 أحدث الأنمي',items:FALLBACK_ANIME},
+        {label:'🔥 الأكثر مشاهدة',items:FALLBACK_ANIME.slice(3,9).concat(FALLBACK_ANIME.slice(0,3))},
+        {label:'⭐ كلاسيكيات',items:FALLBACK_ANIME.slice(0,3).concat(FALLBACK_ANIME.slice(6,12)).concat(FALLBACK_ANIME.slice(3,6))}
+      ];
+      fb.forEach((sec, si) => {
+        const el = document.createElement('div');
+        el.className = 'section';
+        el.id = 'sec-fb-' + si;
+        el.innerHTML = `<div class="section-header"><h2>${sec.label}</h2><span class="section-count">${sec.items.length}</span></div>
+          <div class="swiper" data-sec="fb-${si}"><div class="swiper-wrapper">${sec.items.map(item => '<div class="swiper-slide">' + cardHTML(item) + '</div>').join('')}</div></div>`;
+        sections.appendChild(el);
+      });
+      setTimeout(() => initSwipers(), 100);
     });
 }
 
@@ -905,11 +1061,11 @@ function loadBrowse(p) {
   if (fType.value) q.set('type', fType.value);
   if (fStatus.value) q.set('status', fStatus.value);
   if (fYear.value) q.set('year', fYear.value);
-  apiFetch('/api/browse?' + q)
+  apiFetchBrowse(q.toString())
     .then(d => {
       hideLoading();
       if (d.success) {
-        browseCount.textContent = d.total_min || (d.data || []).length;
+        browseCount.textContent = d.total || (d.data || []).length;
         browseGrid.innerHTML = (d.data || []).map(item => cardHTML(item)).join('');
         browsePages.innerHTML = '';
         if (d.has_next || d.has_prev) {
@@ -939,7 +1095,12 @@ function loadBrowse(p) {
         showToast(d.error || 'فشل التحميل');
       }
     })
-    .catch(() => { hideLoading(); showToast('خطأ في الاتصال'); });
+    .catch(() => {
+      hideLoading();
+      browseCount.textContent = FALLBACK_ANIME.length;
+      browseGrid.innerHTML = FALLBACK_ANIME.map(item => cardHTML(item)).join('');
+      browsePages.innerHTML = '';
+    });
 }
 
 // ── Pick Anime ──
@@ -950,8 +1111,7 @@ function pickAnime(s, img, title, tp, yr, rt) {
   showLoading();
   let timedOut = false;
   const ft = setTimeout(() => { timedOut = true; showToast('الخادم يستغرق وقتاً طويلاً'); }, 12000);
-  fetch('/api/episodes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: s }) })
-    .then(r => r.json())
+  fetchEpisodes(s)
     .then(d => {
       clearTimeout(ft);
       if (timedOut) return;
@@ -959,12 +1119,13 @@ function pickAnime(s, img, title, tp, yr, rt) {
       if (d.found) {
         state.episodes = d.episodes || [];
         state.animeName = d.name || '';
+        window._epData = d;
         showEpisodes();
       } else {
         showToast(d.message || 'تعذر التحميل');
       }
     })
-    .catch(() => { clearTimeout(ft); hideLoading(); showToast('خطأ'); });
+    .catch((e) => { clearTimeout(ft); hideLoading(); showToast(e?.message || 'تعذر تحميل الحلقات'); });
 }
 
 function showEpisodes() {
@@ -985,7 +1146,7 @@ function showEpisodes() {
     return;
   }
   epList.innerHTML = state.episodes.map((e, i) => {
-    const en = e.n || e.number || e.episode_number || e.num || e.episode || (i + 1);
+    const en = e.n != null ? e.n : e.number != null ? e.number : e.episode_number != null ? e.episode_number : e.num != null ? e.num : e.episode != null ? e.episode : (i + 1);
     return `<div class="ep-item" onclick="playEpisode(${en})">
       <span class="ep-num">${en}</span>
       <span class="ep-name">${e.title || 'حلقة ' + en}</span>
@@ -997,56 +1158,60 @@ function showEpisodes() {
 
 epBackBtn.addEventListener('click', () => {
   viewHistory.pop();
-  const prev = viewHistory.pop() || 'homeView';
-  const target = $(prev);
-  if (target) { showView(target, false); backBtn.style.display = viewHistory.length > 1 ? 'flex' : 'none'; }
-  else { showView(homeView, false); viewHistory.push('homeView'); backBtn.style.display = 'none'; }
+  const prev = viewHistory.pop() || 'home';
+  switchView(prev, false);
+  viewHistory.push(prev);
 });
 
 watchBtn.addEventListener('click', () => playEpisode());
 epInput.addEventListener('keydown', e => { if (e.key === 'Enter') playEpisode(); });
 
 function playEpisode(ep) {
-  const n = ep || parseInt(epInput.value);
-  if (!n || n < 1) { showToast('أدخل رقم حلقة صحيح'); return; }
+  const n = ep != null ? ep : (parseInt(epInput.value) || 1);
+  if (n < 1) { showToast('أدخل رقم حلقة صحيح'); return; }
   if (!state.slug) { showToast('اختر أنمي أولاً'); return; }
+  if (!window._epData) { showLoading(); showToast('يجب تحميل الحلقات أولاً'); return; }
   showLoading();
   let timedOut = false;
-  const ft = setTimeout(() => { timedOut = true; showToast('جلب الرابط يستغرق وقتاً'); }, 15000);
-  fetch('/api/play', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: state.slug, episode: n }) })
-    .then(r => r.json())
-    .then(d => {
+  const ft = setTimeout(() => { timedOut = true; showToast('جلب الرابط يستغرق وقتاً'); }, 20000);
+  fetchVideoUrls(state.slug, n, window._epData)
+    .then(urls => {
       clearTimeout(ft);
       if (timedOut) return;
       hideLoading();
-      if (d.found && d.urls.length) {
-        state.urls = d.urls;
-        openPlayer(0);
-      } else {
-        showToast(d.message || 'لا توجد روابط');
-      }
+      state.urls = urls;
+      openPlayer(0);
     })
-    .catch(() => { clearTimeout(ft); hideLoading(); showToast('خطأ'); });
+    .catch(e => {
+      clearTimeout(ft);
+      hideLoading();
+      showToast(e?.message || 'لا توجد روابط');
+    });
 }
 
 // ── Player ──
 let _playerClosing = false;
 
 function openPlayer(idx) {
-  if (_playerClosing || idx >= state.urls.length) {
-    if (idx >= state.urls.length) { showToast('كل السيرفرات متعطلة'); }
+  if (_playerClosing) {
+    _playerClosing = false;
+    playerVideo.classList.remove('hidden');
+  }
+  if (idx >= state.urls.length) {
+    showToast('كل السيرفرات متعطلة');
     closePlayer();
     return;
   }
   clearTimeout(state.timer);
+  clearTimeout(state._hideTimer);
   playerLoading.classList.remove('hidden');
   const url = state.urls[idx];
   const pName = state.animeName || state.slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  playerTitle.textContent = pName + ' — ' + url.server;
+  playerTitle.textContent = pName + ' — ' + (url.server || 'سيرفر ' + (idx + 1));
   playerOverlay.classList.add('show');
   playerBox.classList.add('show');
 
-  if (url.url.includes('mega.nz')) {
+  if (url && url.url && url.url.includes('mega.nz')) {
     playerLoading.classList.add('hidden');
     playerVideo.classList.add('hidden');
     playerIframe.classList.remove('hidden');
@@ -1122,7 +1287,8 @@ function loadHls(urlEl, videoEl, cb) {
   if (videoEl.canPlayType('application/vnd.apple.mpegurl')) {
     videoEl.src = urlEl;
     videoEl.load();
-    if (cb) cb(true);
+    const onReady = () => { videoEl.removeEventListener('loadedmetadata', onReady); if (cb) cb(true); };
+    videoEl.addEventListener('loadedmetadata', onReady);
     return;
   }
   if (window.Hls && Hls.isSupported()) {
@@ -1218,8 +1384,10 @@ document.addEventListener('keydown', e => {
 });
 
 function closePlayer() {
+  if (_playerClosing) return;
   _playerClosing = true;
   clearTimeout(state.timer);
+  clearTimeout(state._hideTimer);
   if (_hls) { try { _hls.destroy(); } catch(e) {} _hls = null; }
   try {
     playerVideo.pause();
@@ -1227,13 +1395,12 @@ function closePlayer() {
     playerVideo.load();
   } catch(e) {}
   playerIframe.src = '';
-  playerVideo.classList.add('hidden');
   playerLoading.classList.add('hidden');
   playerOverlay.classList.remove('show');
   playerBox.classList.remove('show');
   hideLoading();
   if (document.fullscreenElement) try { document.exitFullscreen?.(); } catch(e) {}
-  setTimeout(() => { _playerClosing = false; playerVideo.classList.remove('hidden'); }, 300);
+  state._hideTimer = setTimeout(() => { _playerClosing = false; }, 300);
 }
 
 // ── Init ──
