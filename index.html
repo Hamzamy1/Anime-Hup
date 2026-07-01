@@ -624,34 +624,58 @@ async function proxyFetchText(url, timeoutMs = 12000) {
   return r.text();
 }
 
-// ── API functions (no Flask needed) ──
+// ── API functions (Flask first, then CORS proxy) ──
+async function tryFlask(path) {
+  try {
+    const c = new AbortController();
+    const t = setTimeout(() => c.abort(), 2000);
+    const r = await fetch(path, {signal: c.signal});
+    clearTimeout(t);
+    if (r.ok) return r.json();
+  } catch(e) {}
+  return null;
+}
+
 async function apiFetchHomepage() {
+  const fd = await tryFlask('/api/homepage');
+  if (fd && fd.success && Array.isArray(fd.data) && fd.data.length) return [
+    {label:'🆕 أحدث الأنمي', items: fd.data.slice(0,18).map(fmtItem)},
+    {label:'📺 يعرض الآن', items: fd.data.filter(x=>x.status==='Currently Airing'||x.season==='current').slice(0,18).map(fmtItem)}
+  ];
   const url = API_BASE + '/browse?_api=1&order_by=latest_first&page=1';
   const data = await proxyFetchJSON(url, 10000);
-  if (Array.isArray(data)) return data;
-  if (data && data.success && data.data) return [
-    {label:'🆕 أحدث الأنمي', items: (data.data||[]).slice(0,18).map(fmtItem)},
-    {label:'📺 يعرض الآن', items: (data.data||[]).filter(x=>x.anime_status==='Currently Airing').slice(0,18).map(fmtItem)}
+  if (data && data.success && data.data && data.data.length) return [
+    {label:'🆕 أحدث الأنمي', items: data.data.slice(0,18).map(fmtItem)},
+    {label:'📺 يعرض الآن', items: data.data.filter(x=>x.anime_status==='Currently Airing').slice(0,18).map(fmtItem)}
   ];
-  throw new Error('Invalid homepage data');
+  throw new Error('لا توجد بيانات');
 }
 
 async function apiFetchBrowse(qs) {
-  const url = API_BASE + '/browse?' + qs;
+  const fd = await tryFlask('/api/browse?' + qs);
+  if (fd && fd.success) return {
+    success: true,
+    data: (fd.data||[]).map(fmtItem),
+    has_next: !!fd.has_next, has_prev: !!fd.has_prev,
+    total: fd.total_min || fd.total || (fd.data||[]).length
+  };
+  const url = API_BASE + '/browse?' + qs + '&_api=1';
   const data = await proxyFetchJSON(url, 10000);
-  if (!data || !data.success) return {success:false, data:[], has_next:false, has_prev:false, total:0};
-  return {
+  if (data && data.success) return {
     success: true,
     data: (data.data||[]).map(fmtItem),
     has_next: !!data.has_next, has_prev: !!data.has_prev,
     total: data.total_min || data.total || (data.data||[]).length
   };
+  return {success:false, data:[], has_next:false, has_prev:false, total:0};
 }
 
 async function apiFetchSearch(title) {
+  const fd = await tryFlask('/api/search?title=' + encodeURIComponent(title));
+  if (fd && fd.found && Array.isArray(fd.results)) return fd;
   const url = API_BASE + '/api/search.php?q=' + encodeURIComponent(title);
   const data = await proxyFetchJSON(url, 10000);
-  if (Array.isArray(data)) return {found:data.length?1:0, results: data.map(s=>({title:s.title, slug:(s.href||'').replace('/title/','')||s.slug||'', image:s.image||'', type:s.type||'', year:s.year||'', rating:s.rating||''}))};
+  if (Array.isArray(data)) return {found:data.length?1:0, results: data.map(s=>({title:s.title, slug:(s.href||'').replace('/title/','')||s.slug||'', image:s.image||'', type:s.type||', year:s.year||'', rating:s.rating||''}))};
   return {found:0, results:[]};
 }
 
@@ -1004,9 +1028,11 @@ function loadHome() {
     .then(d => {
       if (!Array.isArray(d) || !d.length) throw new Error('no data');
       sections.innerHTML = '';
+      let totalItems = 0;
       d.forEach((sec, si) => {
         const items = sec.items || [];
         if (!items.length) return;
+        totalItems += items.length;
         const el = document.createElement('div');
         el.className = 'section';
         el.id = 'sec-' + si;
@@ -1014,6 +1040,7 @@ function loadHome() {
           <div class="swiper" data-sec="${si}"><div class="swiper-wrapper">${items.map(item => '<div class="swiper-slide">' + cardHTML(item) + '</div>').join('')}</div></div>`;
         sections.appendChild(el);
       });
+      if (!totalItems) throw new Error('no items');
       setTimeout(() => initSwipers(), 100);
     })
     .catch(() => {
