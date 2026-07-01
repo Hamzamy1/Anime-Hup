@@ -655,10 +655,24 @@ async function apiFetchSearch(title) {
   return {found:0, results:[]};
 }
 
+function generateSlug(name, id) {
+  let slugName = (name || '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  let n = parseInt(id);
+  let suffix = '';
+  while (n > 0) {
+    suffix = String.fromCharCode(97 + (n - 1) % 26) + suffix;
+    n = Math.floor((n - 1) / 26);
+  }
+  return suffix ? slugName + '-' + suffix : slugName;
+}
+
 function fmtItem(item) {
+  let slug = item.slug || (item.href||'').replace('/title/','') || '';
+  if (!slug && item.anime_id) slug = generateSlug(item.anime_name || item.title, item.anime_id);
+  if (!slug) slug = (item.anime_name || item.title || '').toLowerCase().replace(/[^a-z0-9-]/g, '').trim().replace(/\s+/g, '-');
   return {
     title: item.anime_name || item.title || '',
-    slug: item.slug || (item.href||'').replace('/title/','') || '',
+    slug: slug,
     image: item.anime_cover_image_url || item.image || '',
     type: item.anime_type || item.type || '',
     status: item.anime_status || item.status || '',
